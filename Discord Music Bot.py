@@ -3,6 +3,8 @@ import discord
 from discord.ext import commands
 import wavelink
 
+
+
 # Fetch bot token from environment variables
 TOKEN = os.getenv("DISCORD_TOKEN")
 if not TOKEN:
@@ -21,7 +23,7 @@ async def on_ready():
 async def connect_nodes():
     """Connect to Lavalink nodes"""
     await bot.wait_until_ready()
-    node = wavelink.Node(uri="lavalink-4-production-5e75.up.railway.app:2333", password="youshallnotpass")
+    node = wavelink.Node(uri="https://ec2-18-223-100-7.us-east-2.compute.amazonaws.com:2333", password="youshallnotpass")
     await wavelink.Pool.connect(client=bot, nodes=[node])
 
 @bot.command()
