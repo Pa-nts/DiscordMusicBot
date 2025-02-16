@@ -1,9 +1,6 @@
 # Use Python 3.10 as base image
 FROM python:3.10
 
-# Install Java for Lavalink
-RUN apt update && apt install -y openjdk-17-jdk
-
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -13,8 +10,9 @@ COPY . .
 # Install required Python packages (if you have a requirements.txt)
 RUN pip install -r requirements.txt
 
-# Expose Lavalink's default port
-EXPOSE 2333
+# Expose the port for your bot (this may be optional, depending on your setup)
+EXPOSE 8080  # Replace with the port your bot uses for webhooks or interaction
 
-# Start Lavalink and the bot
-CMD java -jar Lavalink.jar & sleep 5 && python "Discord Music Bot.py"
+# Start the bot
+CMD python "Discord Music Bot.py"
+
