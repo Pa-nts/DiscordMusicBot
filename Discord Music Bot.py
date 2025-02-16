@@ -21,7 +21,7 @@ async def on_ready():
 async def connect_nodes():
     """Connect to Lavalink nodes"""
     await bot.wait_until_ready()
-    node = wavelink.Node(uri="localhost:2333", password="youshallnotpass")
+    node = wavelink.Node(uri="lavalink-4-production-5e75.up.railway.app", password="youshallnotpass")
     await wavelink.Pool.connect(client=bot, nodes=[node])
 
 @bot.command()
