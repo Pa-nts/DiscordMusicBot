@@ -1,4 +1,7 @@
-server:  
-  port: 2333  
-lavalink:  
-  password: "youshallnotpass"
+server:
+  # Lavalink server host and port
+  address: 0.0.0.0
+  port: 2333
+
+# Lavalink password (should match your bot configuration)
+password: "youshallnotpass"
