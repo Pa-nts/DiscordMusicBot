@@ -11,8 +11,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Expose the port for your bot (this may be optional, depending on your setup)
-EXPOSE 8080  # Replace with the port your bot uses for webhooks or interaction
+# EXPOSE 8080  # You can add the port if needed, or just remove this line if not required.
 
 # Start the bot
 CMD python "Discord Music Bot.py"
-
